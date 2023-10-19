@@ -50,7 +50,7 @@ async function findBy(filter) {
   const user =  db('users as u')
         .select('user_id', 'username', 'role_name')
         .leftJoin('roles as r', 'u.role_id', 'r.role_id')
-        .where('user_id',user_id)
+        .where('user_id',user_id).first()
   return user
   /**
     You will need to join two tables.
